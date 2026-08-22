@@ -1,0 +1,36 @@
+---
+import PlaceholderPhoto from "./PlaceholderPhoto";
+
+interface Props {
+  icon: (typeof import("lucide-react"))["Sparkles"];
+  imageLabel: string;
+  imageSrc?: string;
+  title: string;
+  description: string;
+  reverse?: boolean;
+}
+
+const { icon, imageLabel, imageSrc, title, description, reverse = false } = Astro.props;
+---
+
+<div class={`flex flex-col gap-5 md:h-[300px] md:gap-6 ${reverse ? "md:flex-row-reverse" : "md:flex-row"}`}>
+  <PlaceholderPhoto
+    icon={icon}
+    label={imageLabel}
+    src={imageSrc}
+    className="h-64 w-full shrink-0 md:h-full md:w-[300px]"
+  />
+
+  <div class="flex flex-1 flex-col justify-center rounded-2xl bg-cream p-7 shadow-[0_8px_24px_-12px_rgba(8,46,45,0.35)] sm:p-9">
+    <h3 class="font-display text-[20px] font-bold text-ink sm:text-[22px]">{title}</h3>
+    <p class="mt-3 max-w-xl text-sm leading-relaxed text-ink-soft sm:text-base">
+      {description}
+    </p>
+    <a
+      href="#contato"
+      class="mt-6 inline-flex w-fit items-center rounded-lg bg-teal-800 px-5 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-teal-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2"
+    >
+      Make a budget
+    </a>
+  </div>
+</div>
