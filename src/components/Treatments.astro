@@ -1,0 +1,48 @@
+---
+import { Sparkles, ShieldCheck, MoveHorizontal } from "lucide-react";
+import TreatmentCard from "./TreatmentCard.astro";
+
+const TREATMENTS = [
+  {
+    icon: ShieldCheck,
+    imageLabel: "Photo: Cleaning and Prevention",
+    imageSrc: "/doctor_cleaning.jpg",
+    title: "Cleaning and Prevention",
+    description:
+      "Regular cleaning is essential for maintaining good health, preventing disease, and ensuring greater well-being and quality of life.",
+    reverse: false,
+  },
+  {
+    icon: Sparkles,
+    imageLabel: "Photo: Teeth Whitening",
+    imageSrc: "/doctors_teath.jpg",
+    title: "Teeth Whitening",
+    description:
+      "Teeth whitening is a cosmetic treatment that removes stains and restores the natural whiteness of teeth, providing a more beautiful and confident smile.",
+    reverse: true,
+  },
+  {
+    icon: MoveHorizontal,
+    imageLabel: "Photo: Orthodontic Appliances",
+    imageSrc: "/orthodontic-appliances.jpg",
+    title: "Orthodontic Appliances",
+    description:
+      "Orthodontic appliances correct tooth positioning, improve bite, and transform smiles for a healthier and more aesthetically pleasing appearance.",
+    reverse: false,
+  },
+];
+---
+
+<section id="tratamentos" class="px-6 pb-24 pt-4 md:pb-28">
+  <div class="mx-auto max-w-[1200px]">
+    <div class="mx-auto mb-14 h-px max-w-[1200px] bg-cream/15"></div>
+
+    <h2 class="text-center font-display text-[28px] font-bold text-cream sm:text-[34px]">
+      Treatments Offered
+    </h2>
+
+    <div class="mt-12 flex flex-col gap-8 md:gap-10">
+      {TREATMENTS.map((treatment) => <TreatmentCard {...treatment} />)}
+    </div>
+  </div>
+</section>

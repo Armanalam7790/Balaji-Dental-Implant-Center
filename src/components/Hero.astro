@@ -1,0 +1,52 @@
+---
+import { Stethoscope } from "lucide-react";
+import ToothIcon from "./ToothIcon";
+import WhatsAppIcon from "./WhatsAppIcon";
+import PlaceholderPhoto from "./PlaceholderPhoto";
+import { HeroCurve } from "./CurvedDecoration";
+---
+
+<section id="inicio" class="relative overflow-hidden bg-cream">
+  <div
+    class="pointer-events-none absolute inset-0 opacity-60"
+    style="background-image: radial-gradient(ellipse 60% 50% at 78% 30%, rgba(13,79,76,0.08), transparent 70%);"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-20 lg:py-24">
+    <div class="animate-fade-up">
+      <div class="mb-5 flex items-center gap-2 text-teal-700">
+        <ToothIcon className="h-5 w-5" />
+        <span class="text-sm font-semibold uppercase tracking-wide">Balaji Dental & Implant Center</span>
+      </div>
+
+      <h1 class="font-display text-[38px] font-extrabold leading-[1.12] tracking-tight text-ink sm:text-[44px] lg:text-[54px]">
+        Brighten your smile with <span class="text-teal-700">expert dental care</span>
+      </h1>
+
+      <p class="mt-5 max-w-md text-base leading-relaxed text-ink-soft sm:text-lg">
+        Schedule your evaluation with a specialized team and personalized care.
+      </p>
+
+      <a
+        href="https://wa.me/918178813235"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-teal-800 px-6 py-3.5 text-sm font-semibold text-cream shadow-md shadow-teal-950/10 transition-transform hover:-translate-y-0.5 hover:bg-teal-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2"
+      >
+        <WhatsAppIcon className="h-4.5 w-4.5" />
+        Schedule now on WhatsApp
+      </a>
+    </div>
+
+    <div class="relative mx-auto h-[440px] w-full max-w-[420px] md:h-[500px] lg:h-[540px]">
+      <HeroCurve className="absolute -right-16 -top-14 h-[135%] w-[135%] md:-right-20 md:-top-16" />
+      <PlaceholderPhoto
+        icon={Stethoscope}
+        label="Photo of the dentist"
+        className="relative left-6 h-full w-[88%] rounded-t-[56px] rounded-b-2xl shadow-xl shadow-teal-950/15"
+      />
+    </div>
+  </div>
+</section>

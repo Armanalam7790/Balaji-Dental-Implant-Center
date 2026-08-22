@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero.astro";
+import Benefits from "../components/Benefits.astro";
+import Treatments from "../components/Treatments.astro";
+import Footer from "../components/Footer.astro";
+import { CornerCurve } from "../components/CurvedDecoration";
+---
+
+<Layout>
+  <div class="min-h-screen bg-cream">
+    <Navbar client:load />
+    <Hero />
+
+    <div class="relative overflow-hidden bg-gradient-to-b from-teal-600 via-teal-800 to-teal-900">
+      <CornerCurve className="pointer-events-none absolute -right-16 -top-10 h-72 w-72 md:h-96 md:w-96" />
+      <CornerCurve className="pointer-events-none absolute -bottom-16 -left-16 h-72 w-72 rotate-180 md:h-96 md:w-96" />
+      <Benefits />
+      <Treatments />
+    </div>
+
+    <Footer />
+  </div>
+</Layout>

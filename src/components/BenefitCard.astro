@@ -1,0 +1,19 @@
+---
+interface Props {
+  icon: (typeof import("lucide-react"))["Building2"];
+  title: string;
+  description: string;
+}
+
+const { icon: Icon, title, description } = Astro.props;
+---
+
+<div class="flex gap-4 rounded-2xl bg-cream p-6 shadow-[0_8px_24px_-12px_rgba(8,46,45,0.35)] transition-transform duration-300 hover:-translate-y-1">
+  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-800/10 text-teal-800">
+    <Icon className="h-5 w-5" strokeWidth={1.8} />
+  </div>
+  <div>
+    <h3 class="text-[18px] font-bold leading-snug text-ink">{title}</h3>
+    <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">{description}</p>
+  </div>
+</div>
